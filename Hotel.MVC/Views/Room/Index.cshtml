@@ -1,0 +1,42 @@
+﻿@model IList<Room> 
+
+
+	@{Layout = "_Layout";}
+
+	<h1>Oteller</h1>
+   <div>
+
+  
+@for (int i = 0; i < Model.Count; i++)
+{
+			<div class="card" style="width: 18rem;">
+				<img src="~/img/room-1.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">@Model[i].RoomNo</h5>
+					<p class="card-text">@Model[i].Description</p>
+					<a asp-action="Details" asp-controller="Room" asp-route-id="@Model[i].Id"  class="btn btn-primary">Detay</a>
+					<p class="card-text">@Model[i].Price</p>
+				</div>
+			</div>
+   
+    
+	
+
+}
+</div>
+
+@*(var room in Model)
+	{
+		
+		<div class="card">
+			<div class="card-header">
+			<h3>@room.RoomNo </h3>
+		</div>
+		<div class="card-body">
+			<p>@room.Description</p>
+		</div>
+		<div class="card-footer">
+			<p> @room.Price $</p>
+		</div>
+		</div>
+	}*@

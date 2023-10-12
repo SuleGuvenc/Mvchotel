@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Menu>
+
+
+
+@foreach (var menu in Model)
+{
+    <li class="nav-item">
+        <a asp-area="@menu.Area" asp-controller="@menu.Controller" asp-action="@menu.Action" class="@menu.Class">
+         @*   <i class="@menu.Icon"></i>*@
+            <i >@menu.MenuAdi</i>
+            
+        </a>
+    </li>
+    
+}

@@ -1,0 +1,70 @@
+﻿@model ICollection<Otel.Entitiy.Concrete.Hotel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    Layout = "_Layout";
+}
+<h1>Ekleme</h1>
+
+<p>
+    <a asp-action="Create">    <button type="button" class="btn btn-primary">Create New</button> </a>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Adres
+            </th>
+            <th>
+                Posta Kodu
+            </th>
+            <th>
+                Otel Adı
+            </th>
+            <th>
+                Şehir
+            </th>
+            <th>
+                İlçe
+            </th>
+            <th>
+                Numara
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostaCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelCity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelCountry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gsm)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"> <button type="button" class="btn btn-info btn-sm">Edit</button> </a>
+                    <a asp-action="Details" asp-route-id="@item.Id"> <button type="button" class="btn btn-success btn-sm">Details</button></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"> <button type="button" class=" btn btn-light btn-sm">Delete</button> </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
